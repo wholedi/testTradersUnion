@@ -1,0 +1,220 @@
+@import "variables";
+
+.forecast {
+    > *:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    &__instruction {
+        border: 3px solid $instruction-white;
+        border-radius: 10px;
+        padding: 21px;
+
+        @media (max-width: 600px) {
+            padding: 15px;
+        }
+    }
+
+    &__block-card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__info {
+        position: relative;
+        padding: 16px;
+        line-height: 175%;
+        background-color: $info-white;
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: $blue;
+        }
+
+
+        > *:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        span {
+            line-height: 175%;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 156%;
+            color: $link-blue;
+            border-radius: 10px;
+            max-width: 452px;
+            background-color: $background-blue;
+            transition: color 0.3s ease-in-out;
+
+            &::after {
+                content: "";
+                height: 16px;
+                width: 16px;
+                flex: 0 0 16px;
+                background-image: url("../img/global/blue-chevron.svg");
+            }
+
+            &:hover {
+                color: $hover-blue;
+            }
+        }
+    }
+}
+
+.instruction {
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        line-height: 135%;
+
+        &--bb {
+            padding-bottom: 16px;
+            border-bottom: 1px solid $light-silver;
+        }
+
+        &--pt {
+            padding-top: 16px;
+        }
+    }
+
+    &__number {
+        position: relative;
+        font-family: "Blogger", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 135%;
+        text-align: center;
+        border-radius: 5px;
+        color: $green;
+        padding: 13px 19px;
+        background-color: $background-green;
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: "";
+            height: 26px;
+            width: 26px;
+            border: 2px solid $green;
+            border-radius: 50%;
+
+        }
+    }
+
+    &__text {
+        > *:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 14px;
+        }
+    }
+}
+
+.card-forecast {
+    border: 1px solid $card-green;
+    border-radius: 10px;
+    text-align: center;
+
+    &--red {
+        border: 1px solid $card-red;
+    }
+
+    &--gray {
+        border: 1px solid $card-gray;
+
+        @media (max-width: 768px) {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 500px) {
+            grid-column: span 1;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 16px 10px;
+    }
+
+    &__label {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        text-align: center;
+        padding: 6px 16px;
+        border-radius: 9px;
+        max-width: 127px;
+        margin-bottom: 6px;
+
+        &--green {
+            background-color: $label-green;
+            color: $green;
+        }
+
+        &--red {
+            background-color: $label-red;
+            color: $red;
+        }
+
+        &--gray {
+            color: $label-gray;
+            background-color: $background-gray;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        line-height: 165%;
+        margin: 6px 0 10px 0;
+        @media (max-width: 600px) {
+            font-size: 14px;
+        }
+    }
+
+    &__info {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 169%;
+        padding: 6px 0;
+        width: 100%;
+        background-color: $converter-white;
+        border-radius: 0 0 10px 10px;
+    }
+}
