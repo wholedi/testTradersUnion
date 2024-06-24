@@ -25,16 +25,29 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        min-height: 74.91px;
+        min-height: 73px;
+        position: relative;
 
         @media (max-width: 600px) {
             min-height: 42px;
         }
     }
 
-    &__logo {
-        position: relative;
+    &__link-logo {
+        position: absolute;
         z-index: 100;
+        left: 50%;
+        transform: translateX(-50%);
+
+
+        @media (max-width: 991px) {
+            position: relative;
+            left: unset;
+            transform: unset;
+        }
+    }
+
+    &__logo {
         max-width: 100%;
 
         @media (max-width: 600px) {

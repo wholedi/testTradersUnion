@@ -16,6 +16,31 @@ body {
     color: $black;
 }
 
+.scrollbar {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+
+    @media (max-width: 600px) {
+        width: 4px;
+    }
+
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: $green;
+    border-radius: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: $border-gray;
+}
+
 .wrapper {
     min-height: 100%;
     overflow: clip;
@@ -96,7 +121,7 @@ body {
         background-color: $sapphire;
     }
 
-    &--transparent {
+    &--lite{
         border: 1px solid $dark-blue;
         background-color: $transparent-blue;
         color: $black;
@@ -106,10 +131,14 @@ body {
         }
     }
 
-    &--header {
+    &--sm {
         font-size: 14px;
         border-radius: 10px;
-        padding: 6px 48px;
+        padding: 6px 42px;
+
+        @media (max-width: 991px) {
+            padding: 6px 42px;
+        }
     }
 
     &--converter {
@@ -128,22 +157,28 @@ body {
         padding: 10px 53px;
         width: 100%;
     }
+
+    &--w150 {
+        white-space: nowrap;
+        width: 150px;
+    }
 }
 
 .tabs {
     margin-bottom: 30px;
 
-    &__container {
+    &__list {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
         gap: 32px;
-        padding-bottom: 10px;
+        padding: 0 15px 10px;
         border-bottom: 1px solid $silver;
 
         &--small {
             padding-left: 0;
             padding-right: 0;
+            margin: 0 -15px;
             gap: 16px;
             font-size: 12px;
             line-height: 200%;
@@ -184,14 +219,13 @@ body {
     line-height: 140%;
     transition: color 0.3s ease-in-out;
 
-    &--desktop,
     &--adaptive {
         display: none;
     }
 
     &--desktop {
-        @media (min-width: 991px) {
-            display: block;
+        @media (max-width: 991px) {
+            display: none;
         }
     }
 

@@ -131,6 +131,8 @@
     }
 
     &__text {
+        line-height: 135%;
+
         > *:not(:last-child) {
             margin-bottom: 10px;
         }
@@ -167,7 +169,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 16px 16px 10px;
+        padding: 16px 16px 0;
     }
 
     &__label {
@@ -202,7 +204,7 @@
 
     &__text {
         line-height: 165%;
-        margin: 6px 0 10px 0;
+        margin-bottom: 10px;
         @media (max-width: 600px) {
             font-size: 14px;
         }
