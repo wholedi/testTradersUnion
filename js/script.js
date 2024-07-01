@@ -46,5 +46,28 @@ document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
     });
 });
 
+function updateCurrentTime() {
+    const now = new Date();
+    const formattedTime = formatTime(now);
+    document.getElementById('current-time').textContent = formattedTime;
+}
+
+function formatTime(date) {
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    return `Real-time Data ${hours}:${minutes}:${seconds}`;
+}
+
+window.onload = function() {
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+};
+
 
 
